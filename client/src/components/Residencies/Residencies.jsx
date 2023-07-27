@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
 import 'swiper/css'
 import './Residencies.css'
@@ -38,12 +39,27 @@ const Residencies = () => {
 
 export default Residencies
 
+
 const SliderButtons = () => {
     const swiper = useSwiper();
+    const [isBeginning, setIsBeginning] = useState(true);
+    const [isEnd, setIsEnd] = useState(false);
+
+    const handleSlideChange = () => {
+      setIsBeginning(swiper.isBeginning);
+      setIsEnd(swiper.isEnd);
+    };
+
+    swiper.on('slideChange', handleSlideChange);
+  
     return (
         <div className="flexCenter r-buttons">
-            <button onClick={() => swiper.slidePrev()}>&lt;</button>
-            <button onClick={() => swiper.slideNext()}>&gt;</button>
+            <button onClick={() => swiper.slidePrev()} disabled={isBeginning}>
+                <FaArrowLeft />
+            </button>
+            <button onClick={() => swiper.slideNext()} disabled={isEnd}>
+                <FaArrowRight />
+            </button>
         </div>
-    )
-}
+    );
+};
