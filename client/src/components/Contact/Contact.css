@@ -6,6 +6,10 @@
     flex: 1;
 }
 
+.c-container .image-container {
+    border: 8px solid rgba(232 232 232 / 93%);
+}
+
 .c-right {
     width: 100%;
 }
@@ -66,7 +70,7 @@
         flex-direction: column;
     }
     .c-right {
-        justify-content: center !important;
+        align-items: center !important;
     }
     .contactModes {
         width: 100%;

@@ -17,7 +17,7 @@ const Value = () => {
     return (
         <section className="v-wrapper">
             <div className="paddings innerWidth flexCenter v-container">
-                 <div className="v-left">
+                 <div className="flexColStart v-left">
                     <div className="image-container">
                         <img src="./value.png" alt="House" />
                     </div>

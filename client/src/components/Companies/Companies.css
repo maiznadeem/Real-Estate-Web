@@ -1,5 +1,5 @@
 .c-container {
-    justify-content: space-between !important;
+    justify-content: space-around !important;
     gap: 1rem;
 }
 

@@ -69,7 +69,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-                <div className="c-right">
+                <div className="flexColEnd c-right">
                     <div className="image-container">
                         <img src="./contact.jpg" alt="Home" />
                     </div>

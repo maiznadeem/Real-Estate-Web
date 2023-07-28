@@ -6,6 +6,10 @@
     flex: 1;
 }
 
+.v-left {
+    width: 100%;
+}
+
 .v-right {
     gap: 0.5rem;
 }
@@ -53,6 +57,9 @@
 @media (max-width: 1024px) {
     .v-container {
         flex-direction: column;
+    }
+    .v-left {
+        align-items: center !important;
     }
     @media (max-width: 768px) {
         .accordion-button .primaryText {
