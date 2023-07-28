@@ -35,7 +35,17 @@ export const getAllResidencies = asyncHandler(async (req, res) => {
                 createdAt: "desc"
             }
         })
-        res.send({message: "All Residencies.", residencies})
+        res.send(residencies)
+    } catch (err) {
+        throw new Error(err.message)
+    }
+})
+
+export const getResidencyByID = asyncHandler(async (req, res) => {
+    const { id } = req.params
+    try {
+        const residency = await prisma.residency.findUnique({where: {id: id}})
+        res.send(residency)
     } catch (err) {
         throw new Error(err.message)
     }
