@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { BiMenuAltRight } from 'react-icons/bi'
-import OutsideClickhandler from 'react-outside-click-handler'
+import OutsideClickHandler from 'react-outside-click-handler'
 
 import './Header.css'
-import OutsideClickHandler from 'react-outside-click-handler'
+import useHeaderColor from '../../hooks/useHeaderColor'
 
 const Header = () => {
 
     const [menuOpened, setMenuOpened] = useState(false)
+    const headerColor = useHeaderColor();
 
     const getMenuStyles = (menuOpened) => {
         if (document.documentElement.clientWidth <= 800) {
@@ -16,7 +17,7 @@ const Header = () => {
     }
 
     return (
-        <section className="h-wrapper">
+        <section className="h-wrapper" style={{ background: headerColor }}>
             <div className="h-container flexCenter paddings innerWidth">
                 <img src="./logo.png" alt="Logo" width={100} />
                 <OutsideClickHandler
