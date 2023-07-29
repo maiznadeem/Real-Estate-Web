@@ -6,16 +6,13 @@ const useHeaderColor = () => {
     
     useEffect(() => {
         function handleScroll() {
-        if (window.scrollY > 8) {
-            setHeaderColor("#302E2E")
-        } else {
-            setHeaderColor("none");
-        }
+            if (window.scrollY > 8)
+                setHeaderColor("#302E2E")
+            else
+                setHeaderColor("none");
         }
         window.addEventListener("scroll", handleScroll);
-        return () => {
-        window.removeEventListener("scroll", handleScroll);
-        };
+        return () => window.removeEventListener("scroll", handleScroll)
     }, []);
 
     return headerColor
