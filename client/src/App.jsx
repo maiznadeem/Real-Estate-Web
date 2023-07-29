@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Layout from './components/Layout/Layout'
 import Website from "./pages/Website"
+import Properties from './pages/Properties/Properties'
 
 import './App.css'
 
@@ -14,6 +15,7 @@ function App() {
                 <Routes>
                     <Route element={<Layout />}>
                         <Route path="/" element={<Website />} />
+                        <Route path='/properties' element={<Properties />} />
                     </Route>
                 </Routes>
             </Suspense>
