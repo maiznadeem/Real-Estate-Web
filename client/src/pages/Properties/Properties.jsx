@@ -4,7 +4,7 @@ import './Properties.css'
 
 const Properties = () => {
     return (
-        <div>Properties</div>
+        <div className='wrapper'>Properties</div>
     )
 }
 
