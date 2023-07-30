@@ -11,7 +11,21 @@ export const getAllProperties = async() => {
         const response = await api.get("/residency/getall", {
             timeout: 10 * 1000,
         })
-        console.log(response)
+        if (response.status == 400 || response.status == 500) {
+            throw response.data
+        }
+        return response.data
+    } catch (err) {
+        toast.error("Something went wrong.")
+        throw err
+    }
+}
+
+export const getProperty = async(id) => {
+    try {
+        const response = await api.get(`/residency/${id}`, {
+            timeout: 10 * 1000,
+        })
         if (response.status == 400 || response.status == 500) {
             throw response.data
         }

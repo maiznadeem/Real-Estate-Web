@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Layout from './components/Layout/Layout'
 import Website from "./pages/Website"
 import Properties from './pages/Properties/Properties'
+import Property from './pages/Property/Property'
 
 import './App.css'
 
@@ -22,7 +23,10 @@ function App() {
                     <Routes>
                         <Route element={<Layout />}>
                             <Route path="/" element={<Website />} />
-                            <Route path='/properties' element={<Properties />} />
+                            <Route path='/properties' >
+                                <Route index element={<Properties />} />
+                                <Route path=":propertyID" element={<Property />} />
+                            </Route>
                         </Route>
                     </Routes>
                 </Suspense>

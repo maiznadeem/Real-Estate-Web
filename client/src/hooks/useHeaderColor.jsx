@@ -7,7 +7,7 @@ const useHeaderColor = () => {
     useEffect(() => {
         function handleScroll() {
             if (window.scrollY > 8)
-                setHeaderColor("#302E2E")
+                setHeaderColor("#131110")
             else
                 setHeaderColor("none");
         }

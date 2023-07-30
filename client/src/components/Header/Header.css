@@ -3,7 +3,6 @@
     z-index: 99;
     position: sticky;
     top: 0;
-    transition: all 300ms ease-in;
 }
 
 .h-container {
