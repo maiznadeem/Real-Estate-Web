@@ -11,7 +11,7 @@ const Header = () => {
 
     const [menuOpened, setMenuOpened] = useState(false)
     const headerColor = useHeaderColor()
-    const { loginWithRedirect } = useAuth0()
+    const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0()
 
     const getMenuStyles = (menuOpened) => {
         if (document.documentElement.clientWidth <= 800) {
@@ -42,7 +42,11 @@ const Header = () => {
                     >
                         <NavLink to="/properties">Properties</NavLink>
                         <a href="mailto:contact.maiznadeem@gmail.com">Contact Us</a>
-                        <button className="button" onClick={handleLoginClick} >Login</button>
+                        {
+                            !isAuthenticated ?
+                            <button className="button" onClick={handleLoginClick} >Login</button>
+                            : <div>User Profile</div>                            
+                        }
                     </div>
                 </OutsideClickHandler>
                 <div className="menu-icon" onClick={() => setMenuOpened(prev => !prev)} >
