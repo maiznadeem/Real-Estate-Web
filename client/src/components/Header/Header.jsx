@@ -19,6 +19,14 @@ const Header = () => {
         }
     }
 
+    const handleLoginClick = async () => {
+        try {
+          await loginWithRedirect();
+        } catch (error) {
+          console.error('Error during login:', error);
+        }
+    };
+
     return (
         <section className="h-wrapper" style={{ background: headerColor }}>
             <div className="h-container flexCenter paddings innerWidth">
@@ -34,7 +42,7 @@ const Header = () => {
                     >
                         <NavLink to="/properties">Properties</NavLink>
                         <a href="mailto:contact.maiznadeem@gmail.com">Contact Us</a>
-                        <button className="button" onClick={loginWithRedirect} >Login</button>
+                        <button className="button" onClick={handleLoginClick} >Login</button>
                     </div>
                 </OutsideClickHandler>
                 <div className="menu-icon" onClick={() => setMenuOpened(prev => !prev)} >
