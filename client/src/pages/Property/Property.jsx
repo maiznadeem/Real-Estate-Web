@@ -66,7 +66,7 @@ const Property = () => {
                         </div>
                         <span className="secondaryText" style={{ textAlign: "justify" }}>{data?.description}</span>
                         <div className="flexStart" style={{ gap: "1rem" }}>
-                            <MdLocationPin size={25} />
+                            <MdLocationPin size={25} color='1F3E72' />
                             <span className="secondaryText">{data?.address}, {data?.city}, {data?.country}
                             </span>
                         </div>
