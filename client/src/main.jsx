@@ -12,6 +12,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Auth0Provider
         domain={config.domain}
+        clientId={config.clientID}
+        authorizationParams={{
+            redirect_uri: "http://localhost:5173/"
+        }}
+        audience="http://localhost:8000"
+        scope="openid profile email"
     >
         <App />
     </Auth0Provider>
