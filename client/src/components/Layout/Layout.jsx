@@ -10,7 +10,7 @@ import UserDetailsContext from '../../context/UserDetailsContext'
 
 const Layout = () => {
     
-    const { isAuthenticated, user, getAccessTokenSilently } = useAuth0()
+    const { isAuthenticated, user, getAccessTokenWithPopup } = useAuth0()
     const { setUserDetails } = useContext(UserDetailsContext)
     const { mutate } = useMutation({
         mutationKey: [user?.email],
@@ -20,13 +20,12 @@ const Layout = () => {
     useEffect(() => {
         const getTokenAndRegister = async() => {
             try {
-                const res = await getAccessTokenSilently({
+                const res = await getAccessTokenWithPopup({
                     authorizationParams: {
                         audience: "http://localhost:8000",
                         scope: "openid profile email",
                     }
                 })
-                console.log(res);
                 localStorage.setItem("access_token", res);
                 setUserDetails((prev) => ({ ...prev, token: res }));
                 mutate(res);
