@@ -47,7 +47,7 @@ const Header = () => {
                         {
                             !isAuthenticated ?
                             <button className="button" onClick={handleLoginClick} >Login</button>
-                            : <ProfileMenu />
+                            : <ProfileMenu user={user} logout={logout} />
                         }
                     </div>
                 </OutsideClickHandler>
