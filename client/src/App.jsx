@@ -23,7 +23,7 @@ function App() {
     })
 
     return (
-        <UserDetailsContext.Provider value={{userDetails, setUserDetails}}>
+        <UserDetailsContext.Provider value={{ userDetails, setUserDetails }}>
             <QueryClientProvider client={queryClient}>
                 <BrowserRouter>
                     <Suspense fallback={<div>Loading...</div>}>
