@@ -4,6 +4,8 @@ import OutsideClickHandler from 'react-outside-click-handler'
 import { Link, NavLink } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 
+import ProfileMenu from '../ProfileMenu/ProfileMenu'
+
 import './Header.css'
 import useHeaderColor from '../../hooks/useHeaderColor'
 
@@ -45,7 +47,7 @@ const Header = () => {
                         {
                             !isAuthenticated ?
                             <button className="button" onClick={handleLoginClick} >Login</button>
-                            : <div>User Profile</div>                            
+                            : <ProfileMenu />
                         }
                     </div>
                 </OutsideClickHandler>
