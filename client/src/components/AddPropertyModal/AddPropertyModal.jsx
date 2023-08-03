@@ -60,7 +60,7 @@ const AddPropertyModal = ({ opened, setOpened }) => {
                         />
                     </Stepper.Step>
                     <Stepper.Step label="Final step" description="Get full access">
-                        Step 3 content: Get full access
+                        <BasicDetails />
                     </Stepper.Step>
                     <Stepper.Completed>
                         Completed, click back button to get to previous step
