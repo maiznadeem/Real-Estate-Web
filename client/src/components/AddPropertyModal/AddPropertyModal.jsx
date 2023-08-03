@@ -6,7 +6,6 @@ const AddPropertyModal = ({ opened, setOpened }) => {
         <Modal
             opened={opened}
             onClose={() => setOpened(false)}
-            closeOnClickOutside
             size={"90rem"}
         >
             Property Modal

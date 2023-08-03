@@ -3,7 +3,6 @@ import { BiMenuAltRight } from 'react-icons/bi'
 import OutsideClickHandler from 'react-outside-click-handler'
 import { Link, NavLink } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
-import { Button } from '@mantine/core'
 
 import ProfileMenu from '../ProfileMenu/ProfileMenu'
 import AddPropertyModal from '../AddPropertyModal/AddPropertyModal'
@@ -54,8 +53,8 @@ const Header = () => {
                         style={getMenuStyles(menuOpened)}
                     >
                         <NavLink to="/properties">Properties</NavLink>
-                        <Button onClick={handleAddPropertyClick} >Add Property</Button>
-                        <AddPropertyModal open={modalOpened} setOpened={setModalOpened} />
+                        <a onClick={handleAddPropertyClick} >Add Property</a>
+                        <AddPropertyModal opened={modalOpened} setOpened={setModalOpened} />
                         <a href="mailto:contact.maiznadeem@gmail.com">Contact Us</a>
                         {
                             !isAuthenticated ?
