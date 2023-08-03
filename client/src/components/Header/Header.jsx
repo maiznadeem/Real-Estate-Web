@@ -3,17 +3,22 @@ import { BiMenuAltRight } from 'react-icons/bi'
 import OutsideClickHandler from 'react-outside-click-handler'
 import { Link, NavLink } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
+import { Button } from '@mantine/core'
 
 import ProfileMenu from '../ProfileMenu/ProfileMenu'
+import AddPropertyModal from '../AddPropertyModal/AddPropertyModal'
+import useHeaderColor from '../../hooks/useHeaderColor'
+import useAuthCheck from '../../hooks/useAuthCheck'
 
 import './Header.css'
-import useHeaderColor from '../../hooks/useHeaderColor'
 
 const Header = () => {
 
     const [menuOpened, setMenuOpened] = useState(false)
     const headerColor = useHeaderColor()
     const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0()
+    const { validateLogin } = useAuthCheck()
+    const [modalOpened, setModalOpened] = useState(false)
 
     const getMenuStyles = (menuOpened) => {
         if (document.documentElement.clientWidth <= 800) {
@@ -29,6 +34,12 @@ const Header = () => {
         }
     };
 
+    const handleAddPropertyClick = () => {
+        if (validateLogin()) {
+            setModalOpened(true)
+        }
+    }
+
     return (
         <section className="h-wrapper" style={{ background: headerColor }}>
             <div className="h-container flexCenter paddings innerWidth">
@@ -43,6 +54,8 @@ const Header = () => {
                         style={getMenuStyles(menuOpened)}
                     >
                         <NavLink to="/properties">Properties</NavLink>
+                        <Button onClick={handleAddPropertyClick} >Add Property</Button>
+                        <AddPropertyModal open={modalOpened} setOpened={setModalOpened} />
                         <a href="mailto:contact.maiznadeem@gmail.com">Contact Us</a>
                         {
                             !isAuthenticated ?
