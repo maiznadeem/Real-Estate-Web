@@ -101,3 +101,23 @@ export const toFavourites = async(id, email, token) => {
         throw err
     }
 }
+
+export const getAllFavourites = async(email, token) => {
+    if (!token)
+        return
+    try {
+        const res = await api.post(`/user/getallfavourites`,
+        {
+            email,
+        },
+        {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        return res.data["favResidenciesID"]
+    } catch (err) {
+        toast.error("Something went wrong while fetching favourites.")
+        throw err
+    }
+}

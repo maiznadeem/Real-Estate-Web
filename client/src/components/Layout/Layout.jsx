@@ -7,8 +7,11 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import { createUser } from '../../utils/api'
 import UserDetailsContext from '../../context/UserDetailsContext'
+import useFavourites from '../../hooks/useFavourites'
 
 const Layout = () => {
+
+    useFavourites()
     
     const { isAuthenticated, user, getAccessTokenWithPopup } = useAuth0()
     const { setUserDetails } = useContext(UserDetailsContext)
