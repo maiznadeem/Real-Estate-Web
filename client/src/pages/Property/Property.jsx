@@ -14,8 +14,10 @@ import useAuthCheck from '../../hooks/useAuthCheck'
 import BookingModal from '../../components/BookingModal/BookingModal'
 import UserDetailsContext from '../../context/UserDetailsContext'
 import { cancelBooking, getProperty } from '../../utils/api'
+import Heart from '../../components/Heart/Heart'
 
 import './Property.css'
+
 
 const Property = () => {
 
@@ -64,7 +66,7 @@ const Property = () => {
         <div className="wrapper">
             <div className="flexColStart paddings innerWidth property-container">
                 <div className="like">
-                    <AiFillHeart size={24} color='white' />
+                    <Heart id={id} />
                 </div>
                 <img src={data?.image} alt="Home Image" />
                 <div className="flexCenter property-details">

@@ -84,3 +84,20 @@ export const cancelBooking = async(id, email, token) => {
         throw err
     }
 }
+
+export const toFavourites = async(id, email, token) => {
+    try {
+        await api.post(`/user/managefavourites/${id}`,
+        {
+            email,
+        },
+        {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+    } catch (err) {
+        toast.error("Something went wrong. Please try again.")
+        throw err
+    }
+}
