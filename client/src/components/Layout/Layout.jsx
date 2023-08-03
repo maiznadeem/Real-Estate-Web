@@ -8,10 +8,12 @@ import Footer from '../Footer/Footer'
 import { createUser } from '../../utils/api'
 import UserDetailsContext from '../../context/UserDetailsContext'
 import useFavourites from '../../hooks/useFavourites'
+import useBookings from '../../hooks/useBookings'
 
 const Layout = () => {
 
     useFavourites()
+    useBookings()
     
     const { isAuthenticated, user, getAccessTokenWithPopup } = useAuth0()
     const { setUserDetails } = useContext(UserDetailsContext)

@@ -121,3 +121,23 @@ export const getAllFavourites = async(email, token) => {
         throw err
     }
 }
+
+export const getAllBookings = async(email, token) => {
+    if (!token)
+        return
+    try {
+        const res = await api.post(`/user/getallbookings`,
+        {
+            email,
+        },
+        {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        return res.data["bookedVisits"]
+    } catch (err) {
+        toast.error("Something went wrong while fetching favourites.")
+        throw err
+    }
+}
