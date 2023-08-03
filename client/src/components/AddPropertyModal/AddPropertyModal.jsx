@@ -61,11 +61,6 @@ const AddPropertyModal = ({ opened, setOpened }) => {
                     </Stepper.Completed>
                 </Stepper>
 
-                <Group position="center" mt="xl">
-                    <Button variant="default" onClick={prevStep}>Back</Button>
-                    <Button onClick={nextStep}>Next step</Button>
-                </Group>
-
             </Container>
         </Modal>
     )
