@@ -137,7 +137,23 @@ export const getAllBookings = async(email, token) => {
         })
         return res.data["bookedVisits"]
     } catch (err) {
-        toast.error("Something went wrong while fetching favourites.")
+        toast.error("Something went wrong while fetching bookings.")
+        throw err
+    }
+}
+
+export const createResidency = async(data, token) => {
+    try {
+        await api.post(`/residency/create`,
+        {
+            data,
+        },
+        {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+    } catch (err) {
         throw err
     }
 }

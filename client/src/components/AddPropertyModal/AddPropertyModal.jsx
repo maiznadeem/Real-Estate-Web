@@ -5,6 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 import AddLocation from '../AddLocation/AddLocation';
 import UploadImage from '../UploadImage/UploadImage';
 import BasicDetails from '../BasicDetails/BasicDetails';
+import Facilities from '../Facilities/Facilities';
 
 const AddPropertyModal = ({ opened, setOpened }) => {
 
@@ -67,13 +68,13 @@ const AddPropertyModal = ({ opened, setOpened }) => {
                             setPropertyDetails={setPropertyDetails}
                         />
                     </Stepper.Step>
-                    <Stepper.Step>
+                    <Stepper.Step label="Rooms" description="Insider Details">
                         <Facilities
-                        prevStep={prevStep}
-                        propertyDetails={propertyDetails}
-                        setPropertyDetails={setPropertyDetails}
-                        setOpened={setOpened}
-                        setActiveStep={setActive}
+                            prevStep={prevStep}
+                            propertyDetails={propertyDetails}
+                            setPropertyDetails={setPropertyDetails}
+                            setOpened={setOpened}
+                            setActiveStep={setActive}
                         />
                     </Stepper.Step>
                     <Stepper.Completed>
