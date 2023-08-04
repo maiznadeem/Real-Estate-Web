@@ -4,10 +4,10 @@ import { PuffLoader } from 'react-spinners'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import useProperties from '../../hooks/useProperties'
 
-import './Properties.css'
+import '../Properties/Properties.css'
 import PropertyCard from '../../components/PropertyCard/PropertyCard'
 
-const Properties = () => {
+const Bookings = () => {
 
     const { data, isError, isLoading } = useProperties()
     const [ filter, setFilter ] = useState("")
@@ -56,4 +56,4 @@ const Properties = () => {
     )
 }
 
-export default Properties
+export default Bookings

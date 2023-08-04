@@ -9,6 +9,7 @@ import Layout from './components/Layout/Layout'
 import Website from "./pages/Website"
 import Properties from './pages/Properties/Properties'
 import Property from './pages/Property/Property'
+import Bookings from './pages/Bookings/Bookings'
 import UserDetailsContext from './context/UserDetailsContext'
 
 import './App.css'
@@ -34,6 +35,7 @@ function App() {
                                     <Route index element={<Properties />} />
                                     <Route path=":propertyID" element={<Property />} />
                                 </Route>
+                                <Route path="/bookings" element={<Bookings />} />
                             </Route>
                         </Routes>
                     </Suspense>
