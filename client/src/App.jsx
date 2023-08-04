@@ -10,6 +10,7 @@ import Website from "./pages/Website"
 import Properties from './pages/Properties/Properties'
 import Property from './pages/Property/Property'
 import Bookings from './pages/Bookings/Bookings'
+import Favourites from './pages/Favourites/Favourites'
 import UserDetailsContext from './context/UserDetailsContext'
 
 import './App.css'
@@ -36,6 +37,7 @@ function App() {
                                     <Route path=":propertyID" element={<Property />} />
                                 </Route>
                                 <Route path="/bookings" element={<Bookings />} />
+                                <Route path="/favourites" element={<Favourites />} />
                             </Route>
                         </Routes>
                     </Suspense>

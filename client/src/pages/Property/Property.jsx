@@ -18,7 +18,6 @@ import Heart from '../../components/Heart/Heart'
 
 import './Property.css'
 
-
 const Property = () => {
 
     const { pathname } = useLocation()

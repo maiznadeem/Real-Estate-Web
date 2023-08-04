@@ -8,11 +8,11 @@ import UserDetailsContext from '../../context/UserDetailsContext'
 
 import '../Properties/Properties.css'
 
-const Bookings = () => {
+const Favourites = () => {
 
     const { data, isError, isLoading } = useProperties()
     const [ filter, setFilter ] = useState("")
-    const { userDetails: { bookings } } = useContext(UserDetailsContext)
+    const { userDetails: { favourites } } = useContext(UserDetailsContext)
 
     if (isError) {
         return (
@@ -45,7 +45,7 @@ const Bookings = () => {
                         data
                             .filter (
                                 property => 
-                                    bookings?.map( booking => booking.id ).includes(property.id)
+                                    favourites?.includes(property.id)
                             )
                             .filter ( 
                                 property => 
@@ -63,4 +63,4 @@ const Bookings = () => {
     )
 }
 
-export default Bookings
+export default Favourites
