@@ -11,6 +11,9 @@ const useFavourites = () => {
     const queryRef = useRef()
     const { user } = useAuth0()
 
+    console.log(userDetails)
+    console.log(user)
+
     const { data, isLoading, isError, refetch } = useQuery({
         queryKey: "allFavourites",
         queryFn: () => getAllFavourites(user?.email, userDetails?.token),
