@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 
 export const api = axios.create({
     // baseURL: "http://localhost:8080/api"
-    baseURL: "https://real-estate-web-lac.vercel.app/api"
+    baseURL: "https://homyz-real-estate.vercel.app/api"
 })
 
 export const getAllProperties = async() => {
