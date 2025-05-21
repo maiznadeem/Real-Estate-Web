@@ -27,8 +27,7 @@ const Layout = () => {
             try {
                 const res = await getAccessTokenWithPopup({
                     authorizationParams: {
-                        // audience: "http://localhost:8000",
-                        audience: "https://homyz-real-estate.vercel.app/",
+                        audience: "https://homyz-real-estate-backend.vercel.app",
                         scope: "openid profile email",
                     }
                 })
